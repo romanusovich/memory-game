@@ -38,6 +38,10 @@ header > button {
     gap: 10px;
 }
 
+#board.blocked {
+    pointer-events: none;
+}
+
 .card {
     width: 80px;
     height: 80px;
@@ -63,9 +67,9 @@ header > button {
     display: none;
 
     position: fixed;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;

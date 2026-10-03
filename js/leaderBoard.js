@@ -1,8 +1,9 @@
 function displayLeaderboard() {
     let leaderboard = document.getElementById('leaderboard');
-    if (leaderboard) {
-        leaderboard.classList.toggle('active');
+    if (!leaderboard) {
+        leaderboard = renderLeaderboard();
     }
+    leaderboard.classList.toggle('active');
 }
 
 function renderLeaderboard() {
@@ -23,6 +24,8 @@ function renderLeaderboard() {
         });
         leaderboard.appendChild(list);
     }
+
+    return leaderboard;
 }
 
 function getLeaderboardData() {
