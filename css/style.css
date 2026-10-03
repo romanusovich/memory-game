@@ -24,7 +24,7 @@ header, footer {
     border-radius: 20px;
 }
 
-header > button {
+header > button, #leaderboard > button {
     border: 1px solid black;
     border-radius: 10px;
     background-color: transparent;
@@ -61,6 +61,7 @@ header > button {
 
 .card.flipped {
     transform: rotateY(180deg);
+    pointer-events: none;
 }
 
 #leaderboard {
@@ -80,5 +81,7 @@ header > button {
 #leaderboard.active {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }

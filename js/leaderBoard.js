@@ -3,7 +3,14 @@ function displayLeaderboard() {
     if (!leaderboard) {
         leaderboard = renderLeaderboard();
     }
-    leaderboard.classList.toggle('active');
+    leaderboard.classList.add('active');
+}
+
+function hideLeaderboard() {
+    let leaderboard = document.getElementById('leaderboard');
+    if (leaderboard) {
+        leaderboard.classList.remove('active');
+    }
 }
 
 function renderLeaderboard() {
@@ -24,6 +31,11 @@ function renderLeaderboard() {
         });
         leaderboard.appendChild(list);
     }
+
+    let leaderboardCloseButton = document.createElement('button');
+    leaderboardCloseButton.textContent = 'Закрыть';
+    leaderboardCloseButton.addEventListener('click', hideLeaderboard);
+    leaderboard.appendChild(leaderboardCloseButton);
 
     return leaderboard;
 }
