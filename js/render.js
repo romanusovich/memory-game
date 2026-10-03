@@ -25,10 +25,14 @@ function initHeader() {
 }
 
 function initBoard() {
-    let board = document.createElement('div');
-    board.id = 'board';
-    document.body.appendChild(board);
+    let board = document.getElementById('board');
+    if (!board) {
+        board = document.createElement('div');
+        board.id = 'board';
+        document.body.appendChild(board);
+    }
 
+    clearBoard();
     gameDeck.startGame();
     initCards();
 }
@@ -83,7 +87,6 @@ function resetScore() {
 }
 
 function newGame() {
-    clearBoard();
     resetScore();
     resetCardEvents();
     initBoard();
