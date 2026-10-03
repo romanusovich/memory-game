@@ -43,6 +43,10 @@ header > button, #leaderboard > button {
 }
 
 .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 80px;
     height: 80px;
     border: 1px solid black;
@@ -62,6 +66,16 @@ header > button, #leaderboard > button {
 .card.flipped {
     transform: rotateY(180deg);
     pointer-events: none;
+}
+
+.card-value {
+    display: inline-block;
+    visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-value {
+    visibility: visible;
 }
 
 #leaderboard {

@@ -29,8 +29,8 @@ function initBoard() {
     board.id = 'board';
     document.body.appendChild(board);
 
+    gameDeck.startGame();
     initCards();
-    shuffleCards();
 }
 
 function initFooter() {
@@ -55,15 +55,14 @@ function initCards() {
         let card = document.createElement('div');
         card.className = 'card';
         card.id = 'card-' + i;
+        card.dataset.index = i;
         card.addEventListener('click', () => selectCard(card));
-        board.appendChild(card);
-    }
-}
 
-function shuffleCards() {
-    let board = document.getElementById('board');
-    for (let i = board.children.length; i >= 0; i--) {
-        board.appendChild(board.children[Math.random() * i | 0]);
+        let value = document.createElement('span');
+        value.className = 'card-value';
+        card.appendChild(value);
+
+        board.appendChild(card);
     }
 }
 
@@ -85,7 +84,7 @@ function resetScore() {
 
 function newGame() {
     clearBoard();
-    initCards();
-    shuffleCards();
     resetScore();
+    resetCardEvents();
+    initBoard();
 }

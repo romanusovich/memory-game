@@ -1,8 +1,7 @@
 function displayLeaderboard() {
     let leaderboard = document.getElementById('leaderboard');
-    if (!leaderboard) {
-        leaderboard = renderLeaderboard();
-    }
+    if (leaderboard) leaderboard.remove();
+    leaderboard = renderLeaderboard();
     leaderboard.classList.add('active');
 }
 
