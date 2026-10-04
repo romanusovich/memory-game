@@ -4,14 +4,14 @@ const gameDeck = (() => {
     return {
         startGame() {
             cardValues = [
-                'A', 'A',
-                'B', 'B',
-                'C', 'C',
-                'D', 'D',
-                'E', 'E',
-                'F', 'F',
-                'G', 'G',
-                'H', 'H'
+                '\u{1F311}', '\u{1F311}',
+                '\u{1F312}', '\u{1F312}',
+                '\u{1F313}', '\u{1F313}',
+                '\u{1F314}', '\u{1F314}',
+                '\u{1F315}', '\u{1F315}',
+                '\u{1F316}', '\u{1F316}',
+                '\u{1F317}', '\u{1F317}',
+                '\u{1F318}', '\u{1F318}'
             ];
 
             for (let index = cardValues.length - 1; index > 0; index -= 1) {
