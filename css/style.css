@@ -24,7 +24,7 @@ header, footer {
     border-radius: 20px;
 }
 
-header > button, #leaderboard > button {
+header > button, .modal > button {
     border: 1px solid black;
     border-radius: 10px;
     background-color: transparent;
@@ -78,7 +78,7 @@ header > button, #leaderboard > button {
     visibility: visible;
 }
 
-#leaderboard {
+.modal {
     display: none;
 
     position: fixed;
@@ -92,10 +92,23 @@ header > button, #leaderboard > button {
     z-index: 1000;
 }
 
-#leaderboard.active {
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+html.modal-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding: 20px 40px;
 }
