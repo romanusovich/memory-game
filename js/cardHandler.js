@@ -31,6 +31,7 @@ function handleMatchedPair() {
     selectedCards = [];
     if (pairsFound === gameDeck.getPairCount()) {
         saveToLeaderboard(stepCounter);
+        displayGameOver(stepCounter);
     }
 }
 

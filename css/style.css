@@ -24,7 +24,7 @@ header, footer {
     border-radius: 20px;
 }
 
-header > button, .modal > button {
+header > button, .modal button {
     border: 1px solid black;
     border-radius: 10px;
     background-color: transparent;
@@ -111,4 +111,11 @@ body.modal-open {
     align-items: center;
     gap: 20px;
     padding: 20px 40px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
