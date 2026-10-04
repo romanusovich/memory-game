@@ -45,6 +45,10 @@ function getLeaderboardData() {
 
 function saveToLeaderboard(steps) {
     const leaderboardData = getLeaderboardData();
+    if (leaderboardData.length >= 10) {
+        leaderboardData.sort((a, b) => a.steps - b.steps);
+        leaderboardData.pop();
+    }
     leaderboardData.push({ steps, date: new Date().toLocaleString() });
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardData));
 }
